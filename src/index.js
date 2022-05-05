@@ -82,7 +82,7 @@ function Square(props) {
         'go to move #'+ move:
         'go to game start';
         return(
-          <li>
+          <li key={move}>
             <button onClick={()=>this.jumpTo(move)}>{desc}</button>
           </li>
         );
@@ -97,7 +97,7 @@ function Square(props) {
       return (
         <div className="game">
           <div className="game-board">
-            <Board  squares ={cuurent.squares} onClick={(i)=>this.handleClick(i)}/>
+            <Board  squares ={current.squares} onClick={(i)=>this.handleClick(i)}/>
 
           </div>
           <div className="game-info">
