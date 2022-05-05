@@ -84,7 +84,7 @@ function Square(props) {
     
     render() {
       const history = this.state.history;
-      const current = history[history.length -1];
+      const current = history[this.state.stepNumber];
       const squares = current.squares.slice();
 
       const moves = history.map((step,move)=>{
