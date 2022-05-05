@@ -77,6 +77,17 @@ function Square(props) {
       const current = history[history.length -1];
       const squares = current.squares.slice();
 
+      const moves = history.map((step,move)=>{
+        const desc = move ? 
+        'go to move #'+ move:
+        'go to game start';
+        return(
+          <li>
+            <button onClick={()=>this.jumpTo(move)}>{desc}</button>
+          </li>
+        );
+      });
+
       let status;  
       if(winner){
         status = 'Winner' +winner;
